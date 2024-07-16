@@ -52,6 +52,7 @@ public class ProgressHUD: UIView {
 	var colorBackground	= UIColor(red: 0, green: 0, blue: 0, alpha: 0.2)
 	var colorHUD		= UIColor.systemGray
     var cornerRadiusHUD: CGFloat = 10.0
+    var isBlurHUD       = true
 	var colorStatus		= UIColor.label
 	var colorProgress	= UIColor.lightGray
 	var colorAnimation	= UIColor.lightGray
@@ -262,6 +263,14 @@ extension ProgressHUD {
 	private func setupToolbar() {
 		if (toolbarHUD == nil) {
 			toolbarHUD = UIToolbar(frame: CGRect.zero)
+            if !isBlurHUD, let hud = toolbarHUD {
+                // 去掉毛玻璃效果
+                let appearance = hud.standardAppearance.copy()
+                appearance.backgroundImage = UIImage()
+                appearance.shadowImage = UIImage()
+                appearance.configureWithTransparentBackground()
+                toolbarHUD?.standardAppearance = appearance
+            }
 			toolbarHUD?.isTranslucent = true
 			toolbarHUD?.clipsToBounds = true
 			toolbarHUD?.layer.cornerRadius = cornerRadiusHUD

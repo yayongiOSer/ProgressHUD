@@ -83,6 +83,11 @@ public extension ProgressHUD {
         set { shared.cornerRadiusHUD = newValue }
     }
     
+    class var isBlurHUD: Bool {
+        get { shared.isBlurHUD }
+        set { shared.isBlurHUD = newValue }
+    }
+    
 	class var colorStatus: UIColor {
 		get { shared.colorStatus }
 		set { shared.colorStatus = newValue }
