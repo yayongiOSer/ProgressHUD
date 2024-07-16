@@ -78,6 +78,11 @@ public extension ProgressHUD {
 		set { shared.colorHUD = newValue }
 	}
 
+    class var cornerRadiusHUD: CGFloat {
+        get { shared.cornerRadiusHUD }
+        set { shared.cornerRadiusHUD = newValue }
+    }
+    
 	class var colorStatus: UIColor {
 		get { shared.colorStatus }
 		set { shared.colorStatus = newValue }
