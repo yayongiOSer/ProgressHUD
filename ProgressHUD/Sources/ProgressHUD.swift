@@ -432,7 +432,7 @@ extension ProgressHUD {
 		if (animationType == .sfSymbolBounce)			{ animationSFSymbolBounce(viewAnimation)		}
 		if (animationType == .squareCircuitSnake)		{ animationSquareCircuitSnake(viewAnimation)	}
 		if (animationType == .triangleDotShift)			{ animationTriangleDotShift(viewAnimation)		}
-        if (animationType == .custom)                   { animationTriangleDotShift(viewAnimation)        }
+        if (animationType == .custom)                   { animationCustom(viewAnimation)                }
 	}
 }
 
