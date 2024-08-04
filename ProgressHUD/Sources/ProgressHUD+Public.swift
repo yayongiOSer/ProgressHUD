@@ -117,6 +117,11 @@ public extension ProgressHUD {
 		get { shared.imageError }
 		set { shared.imageError = newValue }
 	}
+    
+    class var customAnimationHandler: ((UIView) -> Void)? {
+        get { shared.customAnimationHandler }
+        set { shared.customAnimationHandler = newValue }
+    }
 }
 
 // MARK: - HUD Removal

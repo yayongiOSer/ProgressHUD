@@ -41,6 +41,7 @@
 		29FD93D92AD9781A0054B585 /* ProgressHUD+HorizontalDotScaling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FD93C52AD9781A0054B585 /* ProgressHUD+HorizontalDotScaling.swift */; };
 		29FD93DA2AD9781A0054B585 /* ProgressHUD+CircleStrokeSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FD93C62AD9781A0054B585 /* ProgressHUD+CircleStrokeSpin.swift */; };
 		29FD93DB2AD9781A0054B585 /* ProgressHUD+CircleRippleSingle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FD93C72AD9781A0054B585 /* ProgressHUD+CircleRippleSingle.swift */; };
+		A32694112C5F7A6800ECF46F /* ProgreeHUD+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32694102C5F7A6800ECF46F /* ProgreeHUD+Custom.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		29FD93C52AD9781A0054B585 /* ProgressHUD+HorizontalDotScaling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProgressHUD+HorizontalDotScaling.swift"; sourceTree = "<group>"; };
 		29FD93C62AD9781A0054B585 /* ProgressHUD+CircleStrokeSpin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProgressHUD+CircleStrokeSpin.swift"; sourceTree = "<group>"; };
 		29FD93C72AD9781A0054B585 /* ProgressHUD+CircleRippleSingle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProgressHUD+CircleRippleSingle.swift"; sourceTree = "<group>"; };
+		A32694102C5F7A6800ECF46F /* ProgreeHUD+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProgreeHUD+Custom.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				29E576A02ADB05B100929F5B /* ProgressHUD+SFSymbolBounce.swift */,
 				29FD93C02AD9781A0054B585 /* ProgressHUD+SquareCircuitSnake.swift */,
 				29FD93C42AD9781A0054B585 /* ProgressHUD+TriangleDotShift.swift */,
+				A32694102C5F7A6800ECF46F /* ProgreeHUD+Custom.swift */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29FD93D02AD9781A0054B585 /* ProgressHUD+CircleRippleMultiple.swift in Sources */,
+				A32694112C5F7A6800ECF46F /* ProgreeHUD+Custom.swift in Sources */,
 				29FD93D82AD9781A0054B585 /* ProgressHUD+TriangleDotShift.swift in Sources */,
 				295B8483248C1C5B003E8AE6 /* ViewController.swift in Sources */,
 				29A3BDB32AC6ACA90034CAF3 /* ProgressHUD+Enums.swift in Sources */,
@@ -425,14 +429,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 23ZB9HK86W;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = app/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
 				MARKETING_VERSION = 14.1.3;
-				PRODUCT_BUNDLE_IDENTIFIER = com.relatedcode.progresshud;
+				PRODUCT_BUNDLE_IDENTIFIER = com.relatedcode.progresshud.lyy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_INSTALL_OBJC_HEADER = NO;
@@ -456,14 +460,14 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 23ZB9HK86W;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = app/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
 				MARKETING_VERSION = 14.1.3;
-				PRODUCT_BUNDLE_IDENTIFIER = com.relatedcode.progresshud;
+				PRODUCT_BUNDLE_IDENTIFIER = com.relatedcode.progresshud.lyy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_INSTALL_OBJC_HEADER = NO;

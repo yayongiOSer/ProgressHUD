@@ -37,6 +37,7 @@ extension AnimationType {
 		case .sfSymbolBounce:			return "SF Symbol Bounce"
 		case .squareCircuitSnake:		return "Square Circuit Snake"
 		case .triangleDotShift:			return "Triangle Dot Shift"
+        case .custom:                   return "Custom Animation"
 		}
 	}
 }

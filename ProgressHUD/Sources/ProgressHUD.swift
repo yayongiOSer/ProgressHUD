@@ -60,6 +60,7 @@ public class ProgressHUD: UIView {
 	var fontStatus		= UIFont.boldSystemFont(ofSize: 24)
 	var imageSuccess	= UIImage.checkmark.withTintColor(UIColor.systemGreen, renderingMode: .alwaysOriginal)
 	var imageError		= UIImage.remove.withTintColor(UIColor.systemRed, renderingMode: .alwaysOriginal)
+    var customAnimationHandler: ((UIView) -> Void)?
 
 	var didSetupNotifications	= false
 	let keyboardWillShow		= UIResponder.keyboardWillShowNotification
@@ -431,6 +432,7 @@ extension ProgressHUD {
 		if (animationType == .sfSymbolBounce)			{ animationSFSymbolBounce(viewAnimation)		}
 		if (animationType == .squareCircuitSnake)		{ animationSquareCircuitSnake(viewAnimation)	}
 		if (animationType == .triangleDotShift)			{ animationTriangleDotShift(viewAnimation)		}
+        if (animationType == .custom)                   { animationTriangleDotShift(viewAnimation)        }
 	}
 }
 
