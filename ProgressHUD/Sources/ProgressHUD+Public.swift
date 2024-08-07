@@ -123,7 +123,7 @@ public extension ProgressHUD {
         set { shared.customAnimationHandler = newValue }
     }
     
-    class var var customSizeAnimationHandler: ((_ textRect: CGRect, _ animationView: UIView, _ toolbarHUD: UIToolbar, _ label: UILabel) -> ())? {
+    class var customSizeAnimationHandler: ((_ textRect: CGRect, _ animationView: UIView, _ toolbarHUD: UIToolbar, _ label: UILabel) -> ())? {
         get { shared.customSizeAnimationHandler }
         set { shared.customSizeAnimationHandler = newValue }
     }
