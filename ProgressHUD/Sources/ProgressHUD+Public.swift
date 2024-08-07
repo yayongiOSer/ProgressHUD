@@ -132,6 +132,11 @@ public extension ProgressHUD {
         get { shared.customPositionHandler }
         set { shared.customPositionHandler = newValue }
     }
+    
+    class var customScale: CGFloat {
+        get { shared.customScale }
+        set { shared.customScale = newValue }
+    }
 }
 
 // MARK: - HUD Removal

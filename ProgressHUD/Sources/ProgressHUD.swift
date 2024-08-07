@@ -63,6 +63,7 @@ public class ProgressHUD: UIView {
     var customAnimationHandler: ((UIView) -> Void)?
     var customSizeAnimationHandler: ((_ textRect: CGRect, _ animationView: UIView, _ toolbarHUD: UIToolbar, _ label: UILabel) -> ())?
     var customPositionHandler: ((_ main: UIWindow, _ bgView: UIView, _ toolbarHUD: UIToolbar) -> Void)?
+    var customScale: CGFloat = 1.4
     
 	var didSetupNotifications	= false
 	let keyboardWillShow		= UIResponder.keyboardWillShowNotification
@@ -459,7 +460,8 @@ extension ProgressHUD {
     private func setupCustomSizesBoth(_ text: String) {
         if let animationView = viewAnimation,
            let toolBar = toolbarHUD,
-           let label = labelStatus,let handler = customSizeAnimationHandler {
+           let label = labelStatus,
+           let handler = customSizeAnimationHandler {
             var rect = rectText(text)
             handler(rect, animationView, toolBar, label)
         } else {
@@ -588,10 +590,10 @@ extension ProgressHUD {
 		if (alpha == 0) {
 			alpha = 1
 			toolbarHUD?.alpha = 0
-			toolbarHUD?.transform = CGAffineTransform(scaleX: 1.4, y: 1.4)
+			toolbarHUD?.transform = CGAffineTransform(scaleX: customScale, y: customScale)
 
 			UIView.animate(withDuration: 0.15, delay: 0, options: [.allowUserInteraction, .curveEaseIn], animations: { [self] in
-				toolbarHUD?.transform = CGAffineTransform(scaleX: 1/1.4, y: 1/1.4)
+				toolbarHUD?.transform = CGAffineTransform(scaleX: 1/customScale, y: 1/customScale)
 				toolbarHUD?.alpha = 1
 			}, completion: nil)
 		}
