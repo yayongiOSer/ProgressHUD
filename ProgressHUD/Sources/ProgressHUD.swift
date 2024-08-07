@@ -61,6 +61,7 @@ public class ProgressHUD: UIView {
 	var imageSuccess	= UIImage.checkmark.withTintColor(UIColor.systemGreen, renderingMode: .alwaysOriginal)
 	var imageError		= UIImage.remove.withTintColor(UIColor.systemRed, renderingMode: .alwaysOriginal)
     var customAnimationHandler: ((UIView) -> Void)?
+    var customSizeAnimationHandler: ((_ textRect: CGRect, _ animationView: UIView, _ toolbarHUD: UIToolbar, _ label: UILabel) -> ())?
     var customPositionHandler: ((_ main: UIWindow, _ bgView: UIView, _ toolbarHUD: UIToolbar) -> Void)?
     
 	var didSetupNotifications	= false
@@ -445,13 +446,26 @@ extension ProgressHUD {
 			if (animation) && (animationType == .none) {
 				setupSizesTextOnly(text)
 			} else {
-				setupSizesBoth(text)
+                if animationType == .custom {
+                    setupCustomSizesBoth(text)
+                } else {
+                    setupSizesBoth(text)
+                }
 			}
 		} else {
 			setupSizesTextNone()
 		}
 	}
-
+    private func setupCustomSizesBoth(_ text: String) {
+        if let animationView = viewAnimation,
+           let toolBar = toolbarHUD,
+           let label = labelStatus,let handler = customSizeAnimationHandler {
+            var rect = rectText(text)
+            handler(rect, animationView, toolBar, label)
+        } else {
+            setupSizesBoth(text)
+        }
+    }
 	private func setupSizesBoth(_ text: String) {
 		var rect = rectText(text)
 		let base = mediaSize + 2 * marginSize
