@@ -61,7 +61,8 @@ public class ProgressHUD: UIView {
 	var imageSuccess	= UIImage.checkmark.withTintColor(UIColor.systemGreen, renderingMode: .alwaysOriginal)
 	var imageError		= UIImage.remove.withTintColor(UIColor.systemRed, renderingMode: .alwaysOriginal)
     var customAnimationHandler: ((UIView) -> Void)?
-
+    var customPositionHandler: ((_ main: UIWindow, _ bgView: UIView, _ toolbarHUD: UIToolbar) -> Void)?
+    
 	var didSetupNotifications	= false
 	let keyboardWillShow		= UIResponder.keyboardWillShowNotification
 	let keyboardWillHide		= UIResponder.keyboardWillHideNotification
@@ -529,12 +530,19 @@ extension ProgressHUD {
 		}
 
 		DispatchQueue.main.async { [self] in
-			let center = CGPoint(x: main.bounds.size.width / 2, y: (main.bounds.size.height - heightKeyboard) / 2)
+            if let handler = self.customPositionHandler,
+               let main = self.main,
+               let bgview = self.viewBackground,
+               let toolBar = self.toolbarHUD {
+                handler(main, bgview, toolBar)
+            } else {
+                let center = CGPoint(x: main.bounds.size.width / 2, y: (main.bounds.size.height - heightKeyboard) / 2)
 
-			UIView.animate(withDuration: animationDuration, delay: 0, options: .allowUserInteraction) { [self] in
-				viewBackground?.frame = main.bounds
-				toolbarHUD?.center = center
-			}
+                UIView.animate(withDuration: animationDuration, delay: 0, options: .allowUserInteraction) { [self] in
+                    viewBackground?.frame = main.bounds
+                    toolbarHUD?.center = center
+                }
+            }
 		}
 	}
 

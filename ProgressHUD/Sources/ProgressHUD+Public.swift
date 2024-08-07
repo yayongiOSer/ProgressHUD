@@ -122,6 +122,11 @@ public extension ProgressHUD {
         get { shared.customAnimationHandler }
         set { shared.customAnimationHandler = newValue }
     }
+    
+    class var customPositionHandler: ((_ main: UIWindow, _ bgView: UIView, _ toolbarHUD: UIToolbar) -> Void)? {
+        get { shared.customPositionHandler }
+        set { shared.customPositionHandler = newValue }
+    }
 }
 
 // MARK: - HUD Removal
